@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>CloudBrowse — virtual browser</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+  <div id="tabstrip">
+    <div id="tabs"></div>
+    <button id="newtab" class="icon" title="New tab">+</button>
+    <div class="strip-spacer"></div>
+    <span id="sessioninfo" class="meta"></span>
+  </div>
+
+  <div id="toolbar">
+    <button id="back" class="icon" title="Back" aria-label="Back">&#8592;</button>
+    <button id="fwd" class="icon" title="Forward" aria-label="Forward">&#8594;</button>
+    <button id="reload" class="icon" title="Reload" aria-label="Reload">&#8635;</button>
+    <form id="omniform" autocomplete="off">
+      <div id="omnibox">
+        <span id="lock">&#9737;</span>
+        <input id="omni" type="text" spellcheck="false" enterkeyhint="go"
+               placeholder="Search or type a URL" aria-label="Address bar">
+      </div>
+    </form>
+    <button id="copybtn" class="icon" title="Copy selected text out of the virtual browser">&#9112;</button>
+    <button id="kbd" class="icon" title="Show keyboard">&#9000;</button>
+    <button id="full" class="icon" title="Fullscreen">&#9974;</button>
+  </div>
+
+  <div id="stage">
+    <canvas id="screen" width="1280" height="720"></canvas>
+    <textarea id="ime" aria-hidden="true" autocapitalize="off" autocorrect="off" spellcheck="false"></textarea>
+    <div id="overlay">
+      <div class="card">
+        <div class="spinner"></div>
+        <h1 id="ov-title">Starting a browser for you…</h1>
+        <p id="ov-msg">A real Chromium is booting on the server. It is streamed here as images; nothing runs on your device.</p>
+        <button id="ov-btn" hidden>Reconnect</button>
+      </div>
+    </div>
+    <div id="toast"></div>
+  </div>
+
+  <div id="statusbar">
+    <span id="status">connecting…</span>
+    <span class="strip-spacer"></span>
+    <span id="hint" class="meta">Pixel-streamed. Don't sign into real accounts.</span>
+  </div>
+</div>
+<script src="app.js"></script>
+</body>
+</html>
