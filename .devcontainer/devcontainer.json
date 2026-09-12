@@ -1,0 +1,13 @@
+{
+  "name": "CloudBrowse",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:22-bookworm",
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+  "containerEnv": {
+    "CHROMIUM_PATH": "/usr/bin/chromium",
+    "PORT": "7860"
+  },
+  "forwardPorts": [7860],
+  "portsAttributes": {
+    "7860": { "label": "CloudBrowse", "onAutoForward": "notify", "visibility": "public" }
+  }
+}
